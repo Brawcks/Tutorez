@@ -1,0 +1,19 @@
+{% extends 'header.html.twig' %}
+{% block head %}
+  <title>Accueil - Tutorez</title> 
+{% endblock %}
+{% block titlepage %}
+	<li class="nav-item"><a class="nav-link active" href="{{ path('accueil') }}"><em class="fa fa-dashboard"></em> Accueil <span class="sr-only">(current)</span></a></li>
+{% endblock %}
+{% block body %}
+  <h1>Bienvenue sur Tutorez, le site de partage de connaissance et de savoir-faire !</h1>
+  <p>Le site est en construction !</p>
+{% endblock %}
+{% block teachers %}
+  <h2>Voici les professeurs disponibles !</h2>
+  <ul>
+    {% for professeur in professeurs %}
+      {{ include ('accueil/teachers.html.twig', { 'professeurs': professeurs}) }}
+    {% endfor %}
+  </ul>
+{% endblock %}
